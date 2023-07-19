@@ -54,6 +54,9 @@ module.exports.createLogin = function (req, res) {
             return;
 
         }
+        else{
+            return res.redirect('back');
+        }
     }).catch((err) => {
         res.redirect('back');
         return;
