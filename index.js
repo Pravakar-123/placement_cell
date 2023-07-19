@@ -5,7 +5,7 @@ const db=require('./config/dbConnect');
 const cookieParser=require('cookie-parser');
 
 const app=express();
-const port=8000;
+const port=process.env.PORT || 8001;
 
 
 //Used to collect form data
@@ -31,8 +31,8 @@ app.use('*',(req,res)=>{
 
 app.listen(port,(err)=>{
     if(err){
-        console.log("Error in running at port no : 8000");
+        console.log("Error in running at port no :",port);
         return;
     }
-    console.log("Server is running at port no : 8000");
+    console.log("Server is running at port no : ",port);
 })

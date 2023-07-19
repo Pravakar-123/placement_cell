@@ -104,9 +104,7 @@ module.exports.interviewAllocation=function(req,res){
     console.log(req.body);
    Interview_allocation.find({student:req.body.email,company:req.body.company_name}).then((present)=>{
     if(present.length>0){
-        res.redirect({
-            ans:'This interview is already allocated'
-        },'back');return;
+        res.redirect('back');return;
 
 
     }
