@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beautiful Student Form</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ecd1d0, #b9e6f6, #eadcd0);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: #f5f5f5;
+    }
+
+    .form-input:focus {
+      outline: none;
+      background-color: #e0e0e0;
+    }
+
+    .form-select {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: #f5f5f5;
+    }
+
+    .form-select:focus {
+      outline: none;
+      background-color: #e0e0e0;
+    }
+
+    .form-group-inline {
+      display: flex;
+      gap: 10px;
+    }
+
+    .form-group-inline .form-input,
+    .form-group-inline .form-select {
+      flex: 1;
+    }
+
+    .form-group-inline .form-input:not(:last-child),
+    .form-group-inline .form-select:not(:last-child) {
+      margin-right: 10px;
+    }
+    
+    .form-group-inline .form-input-small {
+      width: 80px;
+    }
+
+    .form-button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background-color: #3f51b5;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .form-button:hover {
+      background-color: #2c387e;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-header">
+      <h2 class="form-title">Student Form</h2>
+    </div>
+    <form method="post" action="../editStudent/<%=result.id%>">
+      <div class="form-group">
+        <label for="name" class="form-label" >Name</label>
+        <input type="text" id="name" value='<%= result.name %>' name="name" class="form-input" placeholder="Enter the name">
+      </div>
+      <!-- <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" class="form-input" placeholder="Enter the email">
+      </div> -->
+      <div class="form-group">
+        <label for="college" class="form-label">College Name</label>
+        <input type="text" id="college" value='<%= result.college %>' name="college" class="form-input" placeholder="Enter the college name">
+      </div>
+      <div class="form-group-inline">
+        <div class="form-group">
+          <label for="status" class="form-label">Status</label>
+          <select id="status" class="form-select" name="placement_status">
+            <option value="" selected disabled><%= result.placement_status %></option>
+            <%if(result.placement_status=='placed'){%>
+              
+              <option value="not-placed">Not Placed</option>
+              
+              <%}else{%>
+                <option value="placed">Placed</option>
+                
+              <%}%>
+            
+            
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="batch" class="form-label">Batch</label>
+          <input type="text" id="batch" value='<%= result.batch %>' name="batch" class="form-input" placeholder="Enter the batch">
+        </div>
+      </div>
+      <div class="form-group-inline">
+        <div class="form-group">
+          <label for="dsa-score" class="form-label">DSA Final Score</label>
+          <input type="text" id="dsa-score" value='<%= result.dsa_score %>' name="dsa_score" class="form-input form-input-small" placeholder="DSA">
+        </div>
+        <div class="form-group">
+          <label for="webd-score" class="form-label">WebD Final Score</label>
+          <input type="text" id="webd-score" value='<%= result.webd_score %>' name="webd_score" class="form-input form-input-small" placeholder="WebD">
+        </div>
+        <div class="form-group">
+          <label for="react-score" class="form-label">React Final Score</label>
+          <input type="text" id="react-score" value='<%= result.react_score %>' name="react_score" class="form-input form-input-small" placeholder="React">
+        </div>
+      </div>
+      <button type="submit" class="form-button">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
