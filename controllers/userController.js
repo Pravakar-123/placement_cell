@@ -97,11 +97,14 @@ module.exports.createRegister = function (req, res) {
 
 
             }
+            else{
+                res.redirect('/');
+            }
 
 
         }).catch((err) => {
 
-            console.log('error in finding user in signing up');
+            console.log('error in finding user in signing up',err);
             return;
 
         })
