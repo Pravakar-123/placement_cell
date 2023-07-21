@@ -10,6 +10,7 @@ const companySchama=new mongoose.Schema({
     },
     interview_date:{
         type:Date,
+        default:new Date(),
         required:true
     }
 

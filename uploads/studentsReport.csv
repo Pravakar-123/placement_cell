@@ -1,3 +1,6 @@
 "id","name","email","college","placement_status","batch","dsa_score","webd_score","react_score","company","interviewDate","result"
-"64aa4accbd67b9a8edab6613","Salaj Mondal","salajmondal2032001@gmail.com","Jhinga, Diamond Harbour Road, P.O. Amira, Diamond Harbour-II, West Bengal 743368","not-placed","2023",15,23,34,"company1","2023-08-04T00:00:00.000Z","On Hold"
-"64aa4accbd67b9a8edab6613","Salaj Mondal","salajmondal2032001@gmail.com","Jhinga, Diamond Harbour Road, P.O. Amira, Diamond Harbour-II, West Bengal 743368","not-placed","2023",15,23,34,"","",""
+"64b817cdb5c566de9dad1b35","Salaj mondal","salajmondal27032001@gmail.com","Tnu","not-placed","2019-23",100,200,150,"Accenture","2023-07-28T00:00:00.000Z","On Hold"
+"64b817fcb5c566de9dad1b38","Rahul Mondal","rahul@gmail.com","Tnu","placed","2019-23",100,100,100,"Accenture","2023-07-28T00:00:00.000Z","On Hold"
+"64b817cdb5c566de9dad1b35","Salaj mondal","salajmondal27032001@gmail.com","Tnu","not-placed","2019-23",100,200,150,"Infosys","2023-07-30T00:00:00.000Z","On Hold"
+"64b817cdb5c566de9dad1b35","Salaj mondal","salajmondal27032001@gmail.com","Tnu","not-placed","2019-23",100,200,150,"Codilar Technologies","2023-07-30T00:00:00.000Z","On Hold"
+"64baa6e4f2f654c6eb483490","Roni Dutta","hello@gmail.com","Tnu","not-placed","2019-23",100,100,100,"","",""

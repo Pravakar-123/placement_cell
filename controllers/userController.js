@@ -170,7 +170,7 @@ module.exports.downloadCsv = async (req, res) => {
 
     })
 
-    await Student.find({ email: { $in: studentId } }).then((result) => {
+    await Student.find({ email: { $nin: studentId } }).then((result) => {
         console.log(result);
         for (let i = 0; i < result.length; i++) {
 

@@ -75,30 +75,40 @@ module.exports.editStudent = function (req, res) {
 //This function add a student 
 module.exports.addStudent = function (req, res) {
     console.log(req.body);
+    Student.find({email:req.body.email}).then((result)=>{
+        if(result.length>0){
+            res.redirect('/manageStudent');
+        }
+        else{
 
-    const student = new Student({
-        email: req.body.email,
-        name: req.body.name,
-        college: req.body.college,
-        batch: req.body.batch,
-        placement_status: req.body.status,
-        dsa_score: req.body.dsa_score,
-        webd_score: req.body.webd_score,
-        react_score: req.body.react_score
+            const student = new Student({
+                email: req.body.email,
+                name: req.body.name,
+                college: req.body.college,
+                batch: req.body.batch,
+                placement_status: req.body.status,
+                dsa_score: req.body.dsa_score,
+                webd_score: req.body.webd_score,
+                react_score: req.body.react_score
+            })
+        
+            student.save().then((result) => {
+                console.log(result);
+                res.redirect('../manageStudent');
+                return;
+        
+            }).catch((err) => {
+                console.log(err);
+                res.redirect('back');
+                return;
+            })
+        
+        
+
+        }
     })
 
-    student.save().then((result) => {
-        console.log(result);
-        res.redirect('../manageStudent');
-        return;
-
-    }).catch((err) => {
-        console.log(err);
-        res.redirect('back');
-        return;
-    })
-
-
+   
     return;
 }
 

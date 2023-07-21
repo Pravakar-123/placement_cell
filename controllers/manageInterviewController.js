@@ -90,20 +90,32 @@ module.exports.showCompanyAddForm=function(req,res){
 module.exports.addCompany=function(req,res){
 
     console.log(req.body);
-    const company=new Company({
-        company_name:req.body.company_name,
-        interview_date:req.body.date
-    })
+    Company.find({company_name:req.body.company_name}).then((result)=>{
+        if(result.length>0){
+            res.redirect('/manageInterview');
+        }else{
+            const company=new Company({
+                company_name:req.body.company_name,
+                interview_date:req.body.date
+            })
+        
+            company.save().then((result)=>{
+                console.log(result);
+                res.redirect('../manageInterview');
+                return;
+            }).catch((err)=>{
+                console.log(err);
+                res.send('Interner Server error');
+                return;
+            })
 
-    company.save().then((result)=>{
-        console.log(result);
-        res.redirect('../manageInterview');
-        return;
+        }
     }).catch((err)=>{
-        console.log(err);
-        res.send('Interner Server error');
-        return;
+        console.log("Error to find company",err);
+        return res.redirect('back');
+
     })
+   
    
     return;
 }
