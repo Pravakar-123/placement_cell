@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-
+//Student schame
 const studentSchama=new mongoose.Schema({
     name:{
         type:String,
@@ -41,6 +41,8 @@ const studentSchama=new mongoose.Schema({
     timestamps:true
 });
 
+
+//Student model
 const Student=mongoose.model('Student',studentSchama);
 
 module.exports=Student;

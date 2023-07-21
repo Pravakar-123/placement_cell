@@ -17,18 +17,21 @@ app.use(cookieParser());
 app.set('view engine','ejs');
 app.set('views','./views');
 
+//Telling express that we are using this static file
 app.use(express.static('./assets'));
 
+//Main routes
 app.use('/',require('./routers'));
 
 
 
-
+//universal routing 
 app.use('*',(req,res)=>{
     res.send("Page not found");
     return;
 });
 
+//Setup the port no
 app.listen(port,(err)=>{
     if(err){
         console.log("Error in running at port no :",port);

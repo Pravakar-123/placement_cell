@@ -1,6 +1,6 @@
 
 const mongoose=require('mongoose');
-
+//Compnay schama
 const companySchama=new mongoose.Schema({
 
     company_name:{
@@ -16,7 +16,7 @@ const companySchama=new mongoose.Schema({
 },{
     timestamps:true
 });
-
+//Model creation
 const Company=mongoose.model('Company',companySchama);
 
 module.exports=Company;

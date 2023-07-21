@@ -1,6 +1,7 @@
 const Student = require('../models/student');
 const Interview_allocation = require('../models/interview_allocation');
 
+// This function show student details 
 module.exports.home = function (req, res) {
     Student.find({}).then((result) => {
         console.log(result);
@@ -11,11 +12,13 @@ module.exports.home = function (req, res) {
     return;
 }
 
+//This function show student add form
 module.exports.showStudentForm = function (req, res) {
     res.render('addStudent');
     return;
 }
 
+//This function show student in details
 module.exports.studentDetails = function (req, res) {
     const id = req.params.id;
     console.log(id);
@@ -49,6 +52,8 @@ module.exports.studentDetails = function (req, res) {
     return;
 }
 
+
+//This function help to edit a student
 module.exports.editStudent = function (req, res) {
     const id = req.params.id;
     Student.findById(id).then((result) => {
@@ -67,6 +72,7 @@ module.exports.editStudent = function (req, res) {
     return;
 }
 
+//This function add a student 
 module.exports.addStudent = function (req, res) {
     console.log(req.body);
 
@@ -96,7 +102,7 @@ module.exports.addStudent = function (req, res) {
     return;
 }
 
-
+//This functio update a student
 module.exports.updateStudent = function (req, res) {
     // res.send(req.params.id);
 
@@ -123,6 +129,7 @@ module.exports.updateStudent = function (req, res) {
     return;
 }
 
+//This function delete a student
 module.exports.deleteStudent = function (req, res) {
     const id = req.params.id;
     Interview_allocation.deleteMany({ student: id }).then((ans) => {

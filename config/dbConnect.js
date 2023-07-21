@@ -1,6 +1,8 @@
 //Import mongoose package
 const mongoose = require('mongoose');
 
+//Database connection code
+
 const mongoAtlasUri = 'mongodb+srv://salajmondal27032001:mondalcse18@cluster0.uaeulnt.mongodb.net/placement_cell?retryWrites=true&w=majority';
 
 

@@ -2,6 +2,7 @@ const Company=require('../models/company');
 const Student=require('../models/student');
 const Interview_allocation=require('../models/interview_allocation');
 
+//This function update result of interview
 module.exports.updateResult= async function(req,res){
     Student.findOne({email:req.body.email}).then((ans)=>{
         console.log(ans);
@@ -25,6 +26,8 @@ module.exports.updateResult= async function(req,res){
     })
     return;
 }
+
+//This function show company list
 module.exports.showCompanyList=function(req,res){
     Company.find({}).then((result)=>{
 
@@ -39,6 +42,8 @@ module.exports.showCompanyList=function(req,res){
     return;
 }
 
+
+//This function help to allocate interview
 module.exports.interviewAllocationForm=function(req,res){
    
     Student.find({}).then((student)=>{
@@ -68,17 +73,20 @@ module.exports.interviewAllocationForm=function(req,res){
     return;
 }
 
+//This function help to deallcate interview
 module.exports.interviewDeallocation=function(req,res){
 
     res.render('interviewDeallocation');
     return;
 }
 
+//This function show company add form
 module.exports.showCompanyAddForm=function(req,res){
     res.render('addCompany');
     return;
 }
 
+//This function help to add a company
 module.exports.addCompany=function(req,res){
 
     console.log(req.body);
@@ -100,6 +108,7 @@ module.exports.addCompany=function(req,res){
     return;
 }
 
+//This function help to allocate a interview
 module.exports.interviewAllocation=function(req,res){
     console.log(req.body);
    Interview_allocation.find({student:req.body.email,company:req.body.company_name}).then((present)=>{
@@ -138,11 +147,7 @@ module.exports.interviewAllocation=function(req,res){
 }
 
 
-module.exports.createInterviewDeallocation=function(req,res){
-    res.send("Hello");
-    return;
-}
-
+//This function show list of student allocated for a particular company
 module.exports.showStudent=function(req,res){
     const id=req.params.id;
     console.log(id);
@@ -158,6 +163,7 @@ module.exports.showStudent=function(req,res){
     return;
 }
 
+//This function show result update form
 module.exports.showUpdateForm=function(req,res){
     const id=req.params.id;
     console.log(id);
