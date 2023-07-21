@@ -30,8 +30,18 @@ module.exports.updateResult= async function(req,res){
 //This function show company list
 module.exports.showCompanyList=function(req,res){
     Company.find({}).then((result)=>{
+        var ans=result.map((company)=>{
+            company.interview_date=company.interview_date.toLocaleDateString();
+            let ans={};
+            ans.interview_date=company.interview_date.toLocaleDateString();
+            ans.company_name=company.company_name;
+           return  ans;
+        })
+        console.log(result[0].interview_date.toLocaleDateString());
+        console.log(ans);
 
-        res.render('companyList',{result:result});
+
+        res.render('companyList',{result:ans});
         return;
 
     }).catch((err)=>{
