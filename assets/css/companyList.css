@@ -1,0 +1,85 @@
+
+        body {
+            background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+        }
+
+        th, td {
+            border: none;
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333333;
+            border-bottom: 1px solid #ebebeb;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        caption {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        .button-container {
+            
+            
+            text-align: center;
+            margin-bottom: 20px;
+       
+        }
+
+        .button-container button {
+            background-color: #FF4081;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .button-container button:hover {
+            background-color: #FF2071;
+        }
+
+        .button-container button.deallocation {
+            background-color: #FF5722;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        #add-button{
+            
+            background-color: rgb(37, 239, 37);
+        }
+        a{
+            color:black;
+            text-decoration: none;
+        }
+   

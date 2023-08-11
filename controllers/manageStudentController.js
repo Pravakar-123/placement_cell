@@ -57,9 +57,16 @@ module.exports.studentDetails = function (req, res) {
 module.exports.editStudent = function (req, res) {
     const id = req.params.id;
     Student.findById(id).then((result) => {
-        res.render('studentEdit', {
-            result: result
-        });
+        if(result){
+            res.render('studentEdit', {
+                result: result
+            });
+
+        }
+        else{
+            res.redirect('back');
+        }
+       
 
         console.log(result);
 

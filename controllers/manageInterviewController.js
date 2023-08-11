@@ -35,6 +35,7 @@ module.exports.showCompanyList=function(req,res){
             let ans={};
             ans.interview_date=company.interview_date.toLocaleDateString();
             ans.company_name=company.company_name;
+            ans.id=company.id;
            return  ans;
         })
         console.log(result[0].interview_date.toLocaleDateString());
@@ -175,8 +176,15 @@ module.exports.showStudent=function(req,res){
     console.log(id);
     Interview_allocation.find({company:id}).populate('student').then((ans)=>{
         console.log(ans);
-        res.render('showStudent',{ans:ans});
-        return;
+        if(ans.length>0){
+            return res.render('showStudent',{ans:ans});
+           
+
+        }
+        else{
+            return res.redirect('back');
+        }
+       
     }).catch((err)=>{
         console.log(err);
         return;

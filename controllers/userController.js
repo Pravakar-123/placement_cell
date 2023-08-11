@@ -55,7 +55,7 @@ module.exports.createLogin = function (req, res) {
 
         }
         else{
-            return res.redirect('back');
+            return res.redirect('/register');
         }
     }).catch((err) => {
         res.redirect('back');

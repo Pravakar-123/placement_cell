@@ -1,0 +1,79 @@
+
+
+.add-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #17bda2;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      font-size: 18px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      
+    }
+    .add-button:hover {
+      background-color: #2c387e;
+    }
+    
+     
+     main {
+      background: linear-gradient(135deg, #11998e, #38d7ef);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .studentContainer{
+        width: 60vw;
+        height: 60vh;
+        background-color: #38d7ef;
+       
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: #bd5417;
+        border-width: 5px;
+       
+       
+      
+    }
+    .studentlist{
+        height: 82.6%;
+        
+        overflow:auto;
+
+    }
+    .studentlist::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+    } 
+    .studentContainerHeading{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .studentlistHeading{
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    
+   
